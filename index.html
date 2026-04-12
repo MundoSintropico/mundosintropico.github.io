@@ -5,6 +5,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mundosintropico.github.io/">
 <meta property="og:title" content="Lo Que No Ves — Pensamiento Crítico">
+<meta name="description" content="Investigaciones sin filtros sobre privacidad, dinero y poder. Lo que el sistema no quiere que veas.">
 <meta property="og:description" content="Investigaciones sin filtros sobre privacidad, dinero y poder.">
 <meta property="og:image" content="https://mundosintropico.github.io/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -989,6 +990,9 @@ let countersObs = null;
 
 // ── NAVIGATION ───────────────────────────────────────
 function showHome() {
+  document.title = 'Mundo Sintrópico — Lo Que No Ves';
+  history.pushState({}, '', '/');
+  document.querySelector('meta[name="description"]').setAttribute('content', 'Investigaciones sin filtros sobre privacidad, dinero y poder. Lo que el sistema no quiere que veas.');
   ['screen-list','screen-reader'].forEach(hide);
   show('screen-home');
   scrollTo(0,0);
@@ -1001,6 +1005,10 @@ function showList() {
 }
 function showReader(i) {
   curInv = i; curLayer = 0;
+  const inv = investigations[i];
+  document.title = inv.title + ' — Mundo Sintrópico';
+  history.pushState({}, '', '#inv-' + i);
+  document.querySelector('meta[name="description"]').setAttribute('content', inv.subtitle || inv.title);
   ['screen-home','screen-list'].forEach(hide);
   show('screen-reader');
   renderReader();
