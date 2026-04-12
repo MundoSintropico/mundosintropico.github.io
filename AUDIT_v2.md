@@ -2,7 +2,9 @@
 Fecha: abril 2026
 
 ## Estado actual del repo
-- Rama principal: `main`
+- Rama que publica GitHub Pages: `principal` (alias de `main`)
+- Rama de trabajo local: `main`
+- ⚠️ Siempre hacer push a `main` — es la que GitHub Pages despliega
 - GitHub Pages sirve desde: raíz del repo (`/index.html`)
 - URL pública: https://mundosintropico.github.io/
 
@@ -39,6 +41,11 @@ Añadidos en líneas 4–14 de `/index.html`:
 - Creado `og-image.svg` (diseño neon, 1200×630)
 - Convertido a `og-image.jpg` con sharp (92% quality, 84 KB)
 - Referencias en index.html apuntan a `og-image.jpg`
+
+## Completado en v2
+- ✅ Meta tags OG y Twitter Card funcionando en producción
+- ✅ og-image.jpg (1200×630) visible al compartir en redes
+- ✅ Fix bugs Safari/iOS (scanline overlay + overflow-x)
 
 ## Pendiente (próximas sesiones)
 1. **Punto 3** — Unificar marca: título visible "Mundo Sintrópico" en header + `<title>` a "Mundo Sintrópico — Lo Que No Ves"
