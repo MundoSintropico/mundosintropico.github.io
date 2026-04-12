@@ -46,12 +46,13 @@ Añadidos en líneas 4–14 de `/index.html`:
 - ✅ Meta tags OG y Twitter Card funcionando en producción
 - ✅ og-image.jpg (1200×630) visible al compartir en redes
 - ✅ Fix bugs Safari/iOS (scanline overlay + overflow-x)
+- ✅ SEO: `<meta name="description">` global, `document.title` dinámico por investigación, hash URLs (`#inv-0` … `#inv-4`)
+- ✅ Email: propuesta de valor añadida al formulario de suscripción
 
 ## Pendiente (próximas sesiones)
 1. **Punto 3** — Unificar marca: título visible "Mundo Sintrópico" en header + `<title>` a "Mundo Sintrópico — Lo Que No Ves"
 2. **Punto 2** — SEO: hash URLs por investigación + `document.title` dinámico + meta description por artículo
-3. **Punto 4** — Email: añadir propuesta de valor al formulario de suscripción
-4. **Punto 1** — Performance: extraer imágenes base64 a archivos externos en `/assets/`
+3. **Punto 1** — Performance: extraer imágenes base64 a archivos externos en `/assets/`
 
 ## Stack
 - HTML + CSS + JS vanilla

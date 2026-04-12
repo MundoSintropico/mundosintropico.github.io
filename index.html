@@ -391,6 +391,14 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:r
           </a>
         </div>
       </div>
+      <div class="email-block">
+        <label for="email-inp">Recibe la próxima investigación</label>
+        <p style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.12em;color:var(--gray);margin-bottom:.9rem;line-height:1.7;">Cada investigación, directa a tu inbox.<br>Sin algoritmos. Sin filtros.</p>
+        <div class="email-row">
+          <input id="email-inp" class="email-input" type="email" placeholder="tu@email.com">
+          <button class="email-sub" onclick="subscribeEmail()">Suscribirse</button>
+        </div>
+      </div>
       <div id="refs-container"></div>
     </div>
   </div>
