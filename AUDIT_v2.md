@@ -46,13 +46,14 @@ Añadidos en líneas 4–14 de `/index.html`:
 - ✅ Meta tags OG y Twitter Card funcionando en producción
 - ✅ og-image.jpg (1200×630) visible al compartir en redes
 - ✅ Fix bugs Safari/iOS (scanline overlay + overflow-x)
-- ✅ SEO: `<meta name="description">` global, `document.title` dinámico por investigación, hash URLs (`#inv-0` … `#inv-4`)
-- ✅ Email: propuesta de valor añadida al formulario de suscripción
+- ✅ Marca "Mundo Sintrópico" visible en home + title unificado
+- ✅ SEO: meta description global, document.title dinámico, hash URLs por investigación
+- ✅ Email: propuesta de valor añadida + formulario HTML completo
 
-## Pendiente (próximas sesiones)
-1. **Punto 3** — Unificar marca: título visible "Mundo Sintrópico" en header + `<title>` a "Mundo Sintrópico — Lo Que No Ves"
-2. **Punto 2** — SEO: hash URLs por investigación + `document.title` dinámico + meta description por artículo
-3. **Punto 1** — Performance: extraer imágenes base64 a archivos externos en `/assets/`
+## Pendiente v3
+- ⏳ **Punto 1 — Performance:** extraer imágenes base64 a archivos externos en `/assets/`. Requiere sesión dedicada. El archivo pesa ~1.7 MB, lastra el LCP y el PageSpeed.
+- ⏳ **Email backend:** conectar formulario a Mailchimp, ConvertKit o Formspree
+- ⏳ **Investigaciones #5 y #6:** integrar correctamente en el codebase
 
 ## Stack
 - HTML + CSS + JS vanilla
