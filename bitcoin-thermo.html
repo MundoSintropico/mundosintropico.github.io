@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #07070f; overflow-x: hidden; }
+  @media (max-width: 520px) {
+    .law-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState } = React;
+
+const LAWS = [
+  {
+    id: '01',
+    label: 'PRIMERA LEY',
+    sub: 'Conservación de la Energía',
+    color: '#00f5ff',
+    colorRgb: '0,245,255',
+    principle: 'La energía no puede crearse ni destruirse, solo transformarse. Toda creación de valor exige un coste energético real.',
+    bitcoin: {
+      headline: 'Bitcoin: Coste infalsificable',
+      body: 'Cada bloque requiere energía física real y medible. No puedes crear BTC sin gastar electricidad. Nick Szabo llamó a esto "unforgeable costliness" — la misma propiedad que hace valioso al oro.',
+      metric: '~150 TWh',
+      sublabel: 'energía física anual consumida por la red — real y auditable'
+    },
+    fiat: {
+      headline: 'Fiat: Valor desde la nada',
+      body: 'La Reserva Federal creó 3,3 billones de dólares en 80 días (marzo 2020). Sin trabajo físico. Sin energía consumida. Pulsando teclas. La Primera Ley no aplica al dinero por decreto.',
+      metric: '0 J',
+      sublabel: 'energía física consumida para crear 3,3 billones de dólares'
+    }
+  },
+  {
+    id: '02',
+    label: 'SEGUNDA LEY',
+    sub: 'Entropía Creciente',
+    color: '#ffe600',
+    colorRgb: '255,230,0',
+    principle: 'En todo sistema aislado, la entropía — el desorden — tiempre aumenta. El orden espontáneo es imposible sin un coste energético externo.',
+    bitcoin: {
+      headline: 'Bitcoin: Fuerza sintrópica',
+      body: 'Cada bloque exporta entropía al entorno como calor y genera orden interno permanente en la blockchain. El sistema reduce su entropía monetaria de manera continua y medible.',
+      metric: '0×',
+      sublabel: 'veces violado el límite de 21M en 15 años de red en producción'
+    },
+    fiat: {
+      headline: 'Fiat: Entropía monetaria',
+      body: 'Inflación, devaluación y crisis bancarias no son accidentes. Son inevitabilidades termodinámicas. El desorden en un sistema sin anclaje energético siempre aumenta. Sin excepción histórica.',
+      metric: '96%',
+      sublabel: 'poder adquisitivo perdido por el dólar desde 1913 — entropía medible'
+    }
+  },
+  {
+    id: '03',
+    label: 'TERCERA LEY',
+    sub: 'Cero Absoluto',
+    color: '#ff3060',
+    colorRgb: '255,48,96',
+    principle: 'Al aproximarse al cero absoluto, la entropía de un sistema tiende a su valor mínimo: máximo orden, máxima previsibilidad, mínima incertidumbre.',
+    bitcoin: {
+      headline: '21M: El cero absoluto monetario',
+      body: 'Cada halving reduce la emisión a la mitad. La convergencia a 21M es matemáticamente garantizada — no por un acuerdo humano, sino por el código y la física. En 2140: entropía mínima.',
+      metric: '2140',
+      sublabel: 'año del último satoshi — convergencia al cero termodinámico'
+    },
+    fiat: {
+      headline: 'Fiat: Sin cero de referencia',
+      body: 'Sin límite absoluto, la entropía fiat no tiene techo. No existe un "mínimo" posible. El 100% de las monedas fiat de la historia ha terminado valiendo exactamente cero.',
+      metric: '100%',
+      sublabel: 'de monedas fiat históricas que han llegado a valor cero — sin excepción'
+    }
+  }
+];
+
+const EntropyMeter = ({ law }) => {
+  const orderPct = law.id === '01' ? 22 : law.id === '02' ? 18 : 12;
+  const fiatPct = 88;
+  return (
+    <div style={{ padding: '0.9rem 1rem', border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.015)', marginTop: '1rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.45rem', color: 'rgba(255,255,255,0.25)', marginBottom: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+        <span>₿ Orden (Bitcoin)</span>
+        <span>Entropía (Fiat) ↑</span>
+      </div>
+      <div style={{ position: 'relative', height: '6px', background: 'rgba(255,255,255,0.06)', borderRadius: '1px', overflow: 'hidden' }}>
+        <div style={{
+          position: 'absolute', left: 0, top: 0, height: '100%',
+          width: `${orderPct}%`,
+          background: `linear-gradient(90deg, ${law.color}, ${law.color}aa)`,
+          boxShadow: `0 0 8px ${law.color}60`
+        }} />
+        <div style={{
+          position: 'absolute', right: 0, top: 0, height: '100%',
+          width: `${100 - orderPct}%`,
+          background: 'linear-gradient(90deg, rgba(255,48,96,0.3), rgba(255,48,96,0.7))'
+        }} />
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.42rem', color: 'rgba(255,255,255,0.2)', marginTop: '0.35rem', letterSpacing: '0.1em' }}>
+        <span style={{ color: law.color }}>S→ mín</span>
+        <span style={{ color: '#ff3060' }}>S→ ∞</span>
+      </div>
+    </div>
+  );
+};
+
+const BitcoinThermo = () => {
+  const [active, setActive] = useState(0);
+  const law = LAWS[active];
+
+  return (
+    <div style={{ background: '#07070f', fontFamily: "'Space Mono', 'Courier New', monospace", color: '#e8e8f0', padding: '1.4rem', minHeight: '640px' }}>
+
+      {/* Header */}
+      <div style={{ textAlign: 'center', marginBottom: '1.2rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ fontSize: '0.5rem', letterSpacing: '0.3em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', marginBottom: '0.25rem' }}>
+          TERMODINÁMICA MONETARIA · MCI v2.26
+        </div>
+        <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.05em' }}>
+          Bitcoin vs Dinero Fiat — Las Tres Leyes
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.2rem' }}>
+        {LAWS.map((l, i) => (
+          <button key={i} onClick={() => setActive(i)} style={{
+            flex: 1, padding: '0.6rem 0.4rem',
+            background: active === i ? `rgba(${l.colorRgb},0.08)` : 'transparent',
+            border: `1px solid ${active === i ? l.color : 'rgba(255,255,255,0.1)'}`,
+            color: active === i ? l.color : 'rgba(255,255,255,0.35)',
+            fontFamily: "'Space Mono', monospace",
+            fontSize: '0.55rem', letterSpacing: '0.12em', cursor: 'pointer',
+            transition: 'all 0.18s',
+            textTransform: 'uppercase',
+            boxShadow: active === i ? `0 0 14px rgba(${l.colorRgb},0.18)` : 'none',
+            lineHeight: 1.5
+          }}>
+            {l.id}<br /><span style={{ fontSize: '0.45rem', opacity: 0.65 }}>LEY</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Principle */}
+      <div style={{
+        borderLeft: `2px solid ${law.color}`,
+        paddingLeft: '0.9rem', marginBottom: '1.2rem',
+        fontStyle: 'italic', fontSize: '0.68rem',
+        color: 'rgba(232,232,240,0.6)', lineHeight: 1.65,
+        background: `rgba(${law.colorRgb},0.03)`, padding: '0.7rem 0.9rem'
+      }}>
+        <span style={{ color: law.color, fontStyle: 'normal', fontSize: '0.48rem', letterSpacing: '0.2em', display: 'block', marginBottom: '0.3rem', textTransform: 'uppercase' }}>
+          {law.label} — {law.sub}
+        </span>
+        "{law.principle}"
+      </div>
+
+      {/* Two columns */}
+      <div className="law-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem', marginBottom: '0.8rem' }}>
+
+        {/* Bitcoin */}
+        <div style={{ border: `1px solid rgba(${law.colorRgb},0.3)`, padding: '0.9rem', background: `rgba(${law.colorRgb},0.04)` }}>
+          <div style={{ fontSize: '0.5rem', letterSpacing: '0.18em', color: law.color, textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+            ₿ {law.bitcoin.headline}
+          </div>
+          <p style={{ fontSize: '0.62rem', lineHeight: 1.72, color: 'rgba(232,232,240,0.72)', marginBottom: '0.8rem' }}>
+            {law.bitcoin.body}
+          </p>
+          <div style={{ borderTop: `1px solid rgba(${law.colorRgb},0.2)`, paddingTop: '0.6rem', textAlign: 'center' }}>
+            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: law.color, textShadow: `0 0 18px ${law.color}` }}>
+              {law.bitcoin.metric}
+            </div>
+            <div style={{ fontSize: '0.48rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.2rem', lineHeight: 1.45 }}>
+              {law.bitcoin.sublabel}
+            </div>
+          </div>
+        </div>
+
+        {/* Fiat */}
+        <div style={{ border: '1px solid rgba(255,48,96,0.2)', padding: '0.9rem', background: 'rgba(255,48,96,0.035)' }}>
+          <div style={{ fontSize: '0.5rem', letterSpacing: '0.18em', color: '#ff3060', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+            ↓ {law.fiat.headline}
+          </div>
+          <p style={{ fontSize: '0.62rem', lineHeight: 1.72, color: 'rgba(232,232,240,0.72)', marginBottom: '0.8rem' }}>
+            {law.fiat.body}
+          </p>
+          <div style={{ borderTop: '1px solid rgba(255,48,96,0.15)', paddingTop: '0.6rem', textAlign: 'center' }}>
+            <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#ff3060', textShadow: '0 0 18px rgba(255,48,96,0.7)' }}>
+              {law.fiat.metric}
+            </div>
+            <div style={{ fontSize: '0.48rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.2rem', lineHeight: 1.45 }}>
+              {law.fiat.sublabel}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Entropy meter */}
+      <EntropyMeter law={law} />
+
+      {/* Footer */}
+      <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.44rem', letterSpacing: '0.22em', color: 'rgba(255,255,255,0.12)', textTransform: 'uppercase' }}>
+        NAKAMOTOBOOK.COM
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<BitcoinThermo />);
+</script>
+</body>
+</html>
