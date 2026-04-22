@@ -1375,7 +1375,7 @@ function showReader(i) {
   curInv = i; curLayer = 0;
   const inv = investigations[i];
   document.title = inv.title + ' — Mundo Sintrópico';
-  try { history.pushState({}, '', '#inv-' + i); } catch(e) {}
+  try { history.pushState({}, '', '#inv-' + (i + 1)); } catch(e) {}
   document.querySelector('meta[name="description"]').setAttribute('content', inv.subtitle || inv.title);
   document.body.classList.add('in-reader');
   ['screen-home','screen-list'].forEach(hide);
@@ -1737,20 +1737,20 @@ function toggleRefs(id) {
 }
 
 // ── SHARE ─────────────────────────────────────────────
+function getInvUrl() {
+  return `https://mundosintropico.github.io/#inv-${curInv + 1}`;
+}
 function shareX() {
   const inv = investigations[curInv];
-  const invUrl = `https://mundosintropico.github.io/inv-${curInv + 1}`;
-  const u = encodeURIComponent(invUrl);
+  const u = encodeURIComponent(getInvUrl());
   const t = encodeURIComponent(`"${inv.title}" — Mundo Sintrópico. Lo que no ves.`);
   window.open(`https://twitter.com/intent/tweet?text=${t}&url=${u}`, '_blank');
 }
 function shareTG() {
-  const invUrl = `https://mundosintropico.github.io/inv-${curInv + 1}`;
-  window.open(`https://t.me/share/url?url=${encodeURIComponent(invUrl)}`, '_blank');
+  window.open(`https://t.me/share/url?url=${encodeURIComponent(getInvUrl())}`, '_blank');
 }
 function copyLink() {
-  const invUrl = `https://mundosintropico.github.io/inv-${curInv + 1}`;
-  navigator.clipboard.writeText(invUrl).then(() => {
+  navigator.clipboard.writeText(getInvUrl()).then(() => {
     const b = document.getElementById('copy-btn');
     const orig = b.textContent;
     b.textContent = '✓ Copiado'; b.classList.add('ok');
@@ -1821,6 +1821,19 @@ document.addEventListener('click', e => {
     document.getElementById('inv-dropdown').classList.remove('open');
   }
 });
+
+
+// ── HASH ROUTER ───────────────────────────────────────
+function openFromHash() {
+  const m = location.hash.match(/^#inv-(\d+)$/);
+  if (!m) return;
+  const idx = parseInt(m[1], 10) - 1;
+  if (idx >= 0 && idx < investigations.length && idx !== curInv) {
+    showReader(idx);
+  }
+}
+window.addEventListener('load', openFromHash);
+window.addEventListener('hashchange', openFromHash);
 
 </script>
 </body>
