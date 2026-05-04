@@ -52,4 +52,5 @@ Salvo indicación contraria en los archivos individuales, este proyecto se publi
 Revisa el archivo 'LICENSE' para más detalles.
 ## Estado del proyecto
 Actualmente el proyecto está en fase inicial. Estamos definiendo casos de estudio y estableciendo la metodología de análisis. Tus contribuciones y sugerencias son bienvenidas.
+
  Tus contribuciones y sugerencias son bienvenidas.
