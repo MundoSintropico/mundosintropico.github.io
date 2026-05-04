@@ -1,5 +1,6 @@
 # CREACIÓN DE TRANSPARENCIA
 
+
 ## Objetivo
 Este repositorio recoge el proyecto **CREACIÓN DE TRANSPARENCIA**, una iniciativa destinada a desvelar los mecanismos invisibles que sostienen nuestros actos cotidianos. El objetivo es mostrar el contraste entre lo visible (un gesto trivial, como pagar con tarjeta) y las capas ocultas que lo hacen posible: contratos, algoritmos, cadenas de datos, implicaciones sociales y ecológicas. Buscamos transformar la opacidad en claridad, invitando a reflexionar sobre el significado profundo de aquello que damos por hecho【275689903118586†L160-L182】.
 
