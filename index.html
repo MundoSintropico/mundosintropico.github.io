@@ -369,7 +369,7 @@ body.in-reader{background:#f8f8ff;}
   <div class="home-btns">
     <button class="btn btn-primary" onclick="showList()">VER LO QUE NO VES →</button>
     <div class="inv-dropdown-wrap" id="inv-dd-wrap">
-      <button class="btn btn-secondary" onmouseenter="openDD()" onclick="openDD()">≡ INVESTIGACIONES [6] ▾</button>
+      <button class="btn btn-secondary" onmouseenter="openDD()" onclick="openDD()">≡ INVESTIGACIONES [7] ▾</button>
       <div class="inv-dropdown" id="inv-dropdown">
         <div class="inv-dd-item" onclick="showReader(0)">
           <span class="inv-dd-num c-cyan">#01</span>
@@ -394,6 +394,10 @@ body.in-reader{background:#f8f8ff;}
         <div class="inv-dd-item" onclick="showReader(5)">
           <span class="inv-dd-num c-yellow">#06</span>
           <div><div class="inv-dd-title">Bitcoin y las Leyes de la Termodinámica</div><div class="inv-dd-badge badge-money">FÍSICA &amp; DINERO</div></div>
+        </div>
+        <div class="inv-dd-item" onclick="showReader(6)">
+          <span class="inv-dd-num c-green">#07</span>
+          <div><div class="inv-dd-title">Zoom Infinito</div><div class="inv-dd-badge badge-economy">HERRAMIENTA INTERACTIVA</div></div>
         </div>
       </div>
     </div>
@@ -1348,6 +1352,22 @@ const investigations = [
 }
 
 
+,
+
+/* ── 6: Zoom Infinito ── */
+{
+  title: 'Zoom Infinito',
+  subtitle: 'Visualiza la escala real del dinero, la deuda y el poder financiero global',
+  date: '06-05-2026',
+  capas: 1,
+  mins: 5,
+  views: 0,
+  badge: 'HERRAMIENTA INTERACTIVA',
+  badgeClass: 'badge-economy',
+  externalUrl: '/zoom-infinito/',
+  layers: []
+}
+
 ];
 
 // ── STATE ─────────────────────────────────────────────
@@ -1372,10 +1392,11 @@ function showList() {
   scrollTo(0,0);
 }
 function showReader(i) {
-  curInv = i; curLayer = 0;
   const inv = investigations[i];
+  if (inv.externalUrl) { window.location.href = inv.externalUrl; return; }
+  curInv = i; curLayer = 0;
   document.title = inv.title + ' — Mundo Sintrópico';
-  try { history.pushState({}, '', '#inv-' + (i + 1)); } catch(e) {}
+  try { history.pushState({}, '', '#inv-' + i); } catch(e) {}
   document.querySelector('meta[name="description"]').setAttribute('content', inv.subtitle || inv.title);
   document.body.classList.add('in-reader');
   ['screen-home','screen-list'].forEach(hide);
@@ -1737,20 +1758,20 @@ function toggleRefs(id) {
 }
 
 // ── SHARE ─────────────────────────────────────────────
-function getInvUrl() {
-  return `https://mundosintropico.github.io/#inv-${curInv + 1}`;
-}
 function shareX() {
   const inv = investigations[curInv];
-  const u = encodeURIComponent(getInvUrl());
+  const invUrl = `https://mundosintropico.github.io/inv-${curInv + 1}`;
+  const u = encodeURIComponent(invUrl);
   const t = encodeURIComponent(`"${inv.title}" — Mundo Sintrópico. Lo que no ves.`);
   window.open(`https://twitter.com/intent/tweet?text=${t}&url=${u}`, '_blank');
 }
 function shareTG() {
-  window.open(`https://t.me/share/url?url=${encodeURIComponent(getInvUrl())}`, '_blank');
+  const invUrl = `https://mundosintropico.github.io/inv-${curInv + 1}`;
+  window.open(`https://t.me/share/url?url=${encodeURIComponent(invUrl)}`, '_blank');
 }
 function copyLink() {
-  navigator.clipboard.writeText(getInvUrl()).then(() => {
+  const invUrl = `https://mundosintropico.github.io/inv-${curInv + 1}`;
+  navigator.clipboard.writeText(invUrl).then(() => {
     const b = document.getElementById('copy-btn');
     const orig = b.textContent;
     b.textContent = '✓ Copiado'; b.classList.add('ok');
@@ -1821,19 +1842,6 @@ document.addEventListener('click', e => {
     document.getElementById('inv-dropdown').classList.remove('open');
   }
 });
-
-
-// ── HASH ROUTER ───────────────────────────────────────
-function openFromHash() {
-  const m = location.hash.match(/^#inv-(\d+)$/);
-  if (!m) return;
-  const idx = parseInt(m[1], 10) - 1;
-  if (idx >= 0 && idx < investigations.length && idx !== curInv) {
-    showReader(idx);
-  }
-}
-window.addEventListener('load', openFromHash);
-window.addEventListener('hashchange', openFromHash);
 
 </script>
 </body>
