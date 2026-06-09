@@ -416,7 +416,7 @@ body.in-reader{background:#f8f8ff;}
   </nav>
   <div class="list-header">
     <h2>Investigaciones</h2>
-    <p>3 investigaciones · 3 capas de profundidad · Pensamiento crítico</p>
+    <p>8 investigaciones · 3 capas de profundidad · Pensamiento crítico</p>
   </div>
   <div class="inv-list" id="inv-list"></div>
 </section>
@@ -1401,8 +1401,8 @@ const investigations = [
           <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#00e5ff">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
           <line x1="64" y1="106" x2="600" y2="106" stroke="#1a4b58" stroke-width="1"/>
           <text x="64" y="148" font-family="'Space Mono',monospace" font-size="18" letter-spacing="6" fill="#ffd400">[ CAPA 01 ]</text>
-          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#eafcff" filter="url(#pc1soft)">LA FRICCIÓN</text>
-          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#00e5ff" filter="url(#pc1soft)">VISIBLE</text>
+          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#eafcff" filter="url(#pc1soft)">LA FRICCIÓN</text>
+          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#00e5ff" filter="url(#pc1soft)">VISIBLE</text>
           <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">Lo que se ve — el peaje en cada transmisión.</text>
           <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">01 / 03</text>
           <text x="690" y="172" font-family="'Space Mono',monospace" font-size="12" letter-spacing="3" fill="#6f7d86">PATRIMONIO</text>
@@ -1448,8 +1448,8 @@ const investigations = [
           <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#00e5ff">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
           <line x1="64" y1="106" x2="600" y2="106" stroke="#1a4b58" stroke-width="1"/>
           <text x="64" y="148" font-family="'Space Mono',monospace" font-size="18" letter-spacing="6" fill="#ffd400">[ CAPA 02 ]</text>
-          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#eafcff" filter="url(#pc2soft)">LA DEUDA</text>
-          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#00e5ff" filter="url(#pc2soft)">Y EL TIEMPO</text>
+          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#eafcff" filter="url(#pc2soft)">LA DEUDA</text>
+          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#00e5ff" filter="url(#pc2soft)">Y EL TIEMPO</text>
           <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">Treinta años de interés — la hipoteca que crea el dinero.</text>
           <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">02 / 03</text>
           <text x="690" y="78" font-family="'Space Mono',monospace" font-size="12" letter-spacing="3" fill="#6f7d86">CREACIÓN DE DINERO</text>
@@ -1499,8 +1499,8 @@ const investigations = [
           <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#00e5ff">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
           <line x1="64" y1="106" x2="600" y2="106" stroke="#1a4b58" stroke-width="1"/>
           <text x="64" y="148" font-family="'Space Mono',monospace" font-size="18" letter-spacing="6" fill="#ffd400">[ CAPA 03 ]</text>
-          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#eafcff" filter="url(#pc3soft)">LA LIBERTAD</text>
-          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#00e5ff" filter="url(#pc3soft)">TASADA</text>
+          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#eafcff" filter="url(#pc3soft)">LA LIBERTAD</text>
+          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#00e5ff" filter="url(#pc3soft)">TASADA</text>
           <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">La jaula invisible — usus, fructus y el abusus secuestrado.</text>
           <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">03 / 03</text>
           <text x="930" y="104" font-family="'Space Mono',monospace" font-size="12" letter-spacing="3" fill="#6f7d86" text-anchor="middle">¿DÓNDE ESTÁ LA LIBERTAD?</text>
@@ -2003,6 +2003,17 @@ document.addEventListener('click', e => {
     document.getElementById('inv-dropdown').classList.remove('open');
   }
 });
+
+// deep-link: abrir investigación desde el hash de la URL (p.ej. /#inv-7)
+function openInvFromHash() {
+  const m = (location.hash || '').match(/^#inv-(\d+)$/);
+  if (!m) return;
+  const i = parseInt(m[1], 10);
+  if (investigations[i]) showReader(i);
+}
+if (document.readyState !== 'loading') openInvFromHash();
+else window.addEventListener('DOMContentLoaded', openInvFromHash);
+window.addEventListener('hashchange', openInvFromHash);
 
 </script>
 </body>
