@@ -1366,6 +1366,163 @@ const investigations = [
   badgeClass: 'badge-economy',
   externalUrl: '/zoom-infinito/',
   layers: []
+},
+
+/* ── 7: El Patrimonio Cautivo ── */
+{
+  title: 'El Patrimonio Cautivo',
+  subtitle: 'Por qué trabajar 30 años por una vivienda no te hace su dueño, solo su custodio',
+  date: '09-06-2026',
+  capas: 3,
+  mins: 9,
+  views: 0,
+  badge: 'FISCALIDAD Y PATRIMONIO',
+  badgeClass: 'badge-money',
+  layers: [
+    {
+      label: 'CAPA 01', labelClass: 'lbl-1',
+      title: 'La fricción visible', titleClass: 'c-cyan',
+      html: `
+        <svg class="layer-header-img" style="background:#07090d;border:1px solid rgba(0,229,255,0.16);margin-bottom:1.6rem;" viewBox="0 0 1280 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capa 01 — La Fricción Visible">
+          <defs>
+            <radialGradient id="pc1vig" cx="30%" cy="38%" r="85%"><stop offset="0%" stop-color="#0c131c"/><stop offset="100%" stop-color="#05070a"/></radialGradient>
+            <pattern id="pc1grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#0e3540" stroke-width="1" opacity="0.22"/></pattern>
+            <filter id="pc1soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="pc1thin" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect width="1280" height="440" fill="url(#pc1vig)"/>
+          <rect width="1280" height="440" fill="url(#pc1grid)"/>
+          <rect x="20" y="20" width="1240" height="400" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.38"/>
+          <g stroke="#00e5ff" stroke-width="2" opacity="0.9" fill="none"><path d="M20 46V20H46"/><path d="M1234 20H1260V46"/><path d="M20 394V420H46"/><path d="M1234 420H1260V394"/></g>
+          <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#00e5ff">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
+          <line x1="64" y1="106" x2="600" y2="106" stroke="#1a4b58" stroke-width="1"/>
+          <text x="64" y="148" font-family="'Space Mono',monospace" font-size="18" letter-spacing="6" fill="#ffd400">[ CAPA 01 ]</text>
+          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#eafcff" filter="url(#pc1soft)">LA FRICCIÓN</text>
+          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#00e5ff" filter="url(#pc1soft)">VISIBLE</text>
+          <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">Lo que se ve — el peaje en cada transmisión.</text>
+          <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">01 / 03</text>
+          <text x="690" y="172" font-family="'Space Mono',monospace" font-size="12" letter-spacing="3" fill="#6f7d86">PATRIMONIO</text>
+          <g stroke="#00e5ff" stroke-width="2.5" fill="none" filter="url(#pc1thin)"><path d="M676 196 L709 166 L742 196"/><rect x="686" y="196" width="46" height="42"/><rect x="700" y="212" width="14" height="26" stroke-width="2"/></g>
+          <rect x="744" y="196" width="78" height="42" fill="#00e5ff" opacity="0.85"/>
+          <rect x="824" y="201" width="124" height="32" fill="#00e5ff" opacity="0.62"/>
+          <rect x="952" y="206" width="124" height="22" fill="#00e5ff" opacity="0.42"/>
+          <rect x="1080" y="210" width="92" height="14" fill="#00e5ff" opacity="0.28"/>
+          <g stroke="#00e5ff" stroke-width="2" opacity="0.85"><line x1="822" y1="150" x2="822" y2="300"/><line x1="950" y1="150" x2="950" y2="300"/><line x1="1078" y1="150" x2="1078" y2="300"/></g>
+          <g fill="#ff2e55" filter="url(#pc1thin)"><path d="M812 246 L832 246 L822 272 Z"/><path d="M940 246 L960 246 L950 272 Z"/><path d="M1068 246 L1088 246 L1078 272 Z"/></g>
+          <g font-family="'Space Mono',monospace" fill="#ff2e55" font-size="12" text-anchor="middle"><text x="822" y="290">−%</text><text x="950" y="290">−%</text><text x="1078" y="290">−%</text></g>
+          <g font-family="'Space Mono',monospace" fill="#6f7d86" font-size="12" letter-spacing="2" text-anchor="middle"><text x="822" y="318">COMPRA</text><text x="950" y="318">VENTA</text><text x="1078" y="318">RECOMPRA</text></g>
+        </svg>
+        <p>Un funcionario de clase C. Sueldo pírrico. Treinta años de hipoteca. Compra en 1999, vende en 2025, reinvierte en 2026. Ha hecho lo que el sistema llama virtud: trabajar, ahorrar, comprar. Y descubre que el patrimonio que tanto le costó <strong>nunca termina de ser suyo</strong>.</p>
+        <p>Cada movimiento del inmueble activa un peaje que no depende de que hayas ganado nada. Al comprar usada pagas ITP; al comprar nueva, IVA más AJD. Sumas notaría, registro, gestoría, tasación. Al vender: plusvalía municipal cuando hay ganancia real, cancelación de hipoteca, certificado energético. Al reinvertir, vuelta a empezar.</p>
+        <p>El detalle decisivo: <strong>todos esos tributos se pagan con dinero que ya tributó</strong>. Ganaste el salario, pagaste IRPF, y con el neto abonas el ITP. El sistema grava el mismo euro en su origen y en su empleo. La fricción no mide riqueza creada: penaliza moverse.</p>
+        <div class="stats-row">
+          <div class="stat-card"><div class="stat-n c-cyan" data-target="10" data-suffix=" %">0</div><div class="stat-label">tipo máximo de ITP sobre la compra de vivienda usada, según comunidad autónoma</div></div>
+          <div class="stat-card"><div class="stat-n c-cyan" data-target="13" data-suffix=" %">0</div><div class="stat-label">del precio en impuestos y gastos solo por entrar al inmueble (obra nueva con IVA + AJD)</div></div>
+          <div class="stat-card"><div class="stat-n c-cyan" data-target="3" data-suffix="">0</div><div class="stat-label">transmisiones gravadas en el recorrido: compra, venta y recompra del mismo patrimonio</div></div>
+          <div class="stat-card"><div class="stat-n c-red" data-target="47" data-suffix=" %">0</div><div class="stat-label">tipo marginal máximo del IRPF con el que ya tributó el salario que paga esos impuestos</div></div>
+        </div>
+        <div class="quote-box"><p>«El impuesto sobre la transmisión no grava la ganancia: grava el hecho de <strong>mover un patrimonio que ya pagó por existir</strong>.»</p></div>
+      `
+    },
+    {
+      label: 'CAPA 02', labelClass: 'lbl-2',
+      title: 'La deuda y el tiempo', titleClass: 'c-yellow',
+      html: `
+        <svg class="layer-header-img" style="background:#07090d;border:1px solid rgba(255,212,0,0.14);margin-bottom:1.6rem;" viewBox="0 0 1280 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capa 02 — La Deuda y el Tiempo">
+          <defs>
+            <radialGradient id="pc2vig" cx="30%" cy="38%" r="85%"><stop offset="0%" stop-color="#0c131c"/><stop offset="100%" stop-color="#05070a"/></radialGradient>
+            <pattern id="pc2grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#0e3540" stroke-width="1" opacity="0.22"/></pattern>
+            <filter id="pc2soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="pc2thin" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="pc2int" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00e5ff" stop-opacity="0.30"/><stop offset="100%" stop-color="#00e5ff" stop-opacity="0.02"/></linearGradient>
+            <marker id="pc2ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#ffd400"/></marker>
+          </defs>
+          <rect width="1280" height="440" fill="url(#pc2vig)"/>
+          <rect width="1280" height="440" fill="url(#pc2grid)"/>
+          <rect x="20" y="20" width="1240" height="400" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.38"/>
+          <g stroke="#00e5ff" stroke-width="2" opacity="0.9" fill="none"><path d="M20 46V20H46"/><path d="M1234 20H1260V46"/><path d="M20 394V420H46"/><path d="M1234 420H1260V394"/></g>
+          <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#00e5ff">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
+          <line x1="64" y1="106" x2="600" y2="106" stroke="#1a4b58" stroke-width="1"/>
+          <text x="64" y="148" font-family="'Space Mono',monospace" font-size="18" letter-spacing="6" fill="#ffd400">[ CAPA 02 ]</text>
+          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#eafcff" filter="url(#pc2soft)">LA DEUDA</text>
+          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#00e5ff" filter="url(#pc2soft)">Y EL TIEMPO</text>
+          <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">Treinta años de interés — la hipoteca que crea el dinero.</text>
+          <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">02 / 03</text>
+          <text x="690" y="78" font-family="'Space Mono',monospace" font-size="12" letter-spacing="3" fill="#6f7d86">CREACIÓN DE DINERO</text>
+          <circle cx="752" cy="118" r="20" fill="none" stroke="#ffd400" stroke-width="2.5" filter="url(#pc2thin)"/>
+          <circle cx="1108" cy="118" r="20" fill="none" stroke="#ffd400" stroke-width="2.5" filter="url(#pc2thin)"/>
+          <text x="752" y="158" font-family="'Space Mono',monospace" font-size="11" letter-spacing="2" fill="#9fb0ba" text-anchor="middle">DEUDOR</text>
+          <text x="1108" y="158" font-family="'Space Mono',monospace" font-size="11" letter-spacing="2" fill="#9fb0ba" text-anchor="middle">BANCO</text>
+          <path d="M774 104 Q930 60 1086 104" fill="none" stroke="#ffd400" stroke-width="2" opacity="0.85" marker-end="url(#pc2ah)"/>
+          <path d="M1086 132 Q930 176 774 132" fill="none" stroke="#ffd400" stroke-width="2" opacity="0.85" marker-end="url(#pc2ah)"/>
+          <text x="930" y="128" font-family="'Syne',sans-serif" font-weight="800" font-size="34" fill="#ffd400" text-anchor="middle" filter="url(#pc2soft)">€</text>
+          <text x="930" y="86" font-family="'Space Mono',monospace" font-size="10" fill="#6f7d86" text-anchor="middle">préstamo</text>
+          <text x="930" y="162" font-family="'Space Mono',monospace" font-size="10" fill="#6f7d86" text-anchor="middle">interés</text>
+          <path d="M700 326 L700 196 C 852 244 1004 304 1170 318 L1170 326 Z" fill="url(#pc2int)" stroke="#00e5ff" stroke-width="2" stroke-opacity="0.65" filter="url(#pc2thin)"/>
+          <text x="712" y="212" font-family="'Space Mono',monospace" font-size="12" letter-spacing="2" fill="#00e5ff">INTERÉS</text>
+          <line x1="690" y1="326" x2="1180" y2="326" stroke="#00e5ff" stroke-width="2" opacity="0.55"/>
+          <g stroke="#00e5ff" stroke-width="2" opacity="0.55"><line x1="700" y1="322" x2="700" y2="332"/><line x1="857" y1="322" x2="857" y2="332"/><line x1="1013" y1="322" x2="1013" y2="332"/><line x1="1170" y1="322" x2="1170" y2="332"/></g>
+          <g font-family="'Space Mono',monospace" fill="#6f7d86" font-size="12" text-anchor="middle"><text x="700" y="348">1999</text><text x="857" y="348">2009</text><text x="1013" y="348">2019</text><text x="1170" y="348">2029</text></g>
+        </svg>
+        <p>Treinta años pagando intereses. A largo plazo, lo que entregas al banco se acerca a pagar la vivienda <strong>una segunda vez</strong>.</p>
+        <p>Pero hay algo bajo el interés. En la economía moderna, el grueso del dinero no lo imprime el Estado: <strong>lo crean los bancos al conceder préstamos</strong>, anotando un depósito nuevo. La hipoteca es el canal principal de esa creación. Te endeudas para tener un techo y, al hacerlo, financias la fabricación del dinero cuya abundancia diluye tus ahorros.</p>
+        <p>Es la crítica austríaca: quien está cerca de la fuente del dinero nuevo —banca, Estado, tenedores de activos— gana primero; el asalariado lo recibe ya devaluado y paga el último. <em>(Matiz veraz: el AJD de la hipoteca lo paga el banco desde 2018, no el prestatario.)</em></p>
+        <div class="stats-row">
+          <div class="stat-card"><div class="stat-n c-yellow" data-target="30" data-suffix="">0</div><div class="stat-label">años pagando intereses por un único inmueble</div></div>
+          <div class="stat-card"><div class="stat-n c-yellow" data-target="100" data-suffix=" %">0</div><div class="stat-label">del capital prestado puede volver a pagarse solo en intereses a largo plazo</div></div>
+          <div class="stat-card"><div class="stat-n c-yellow" data-target="2014" data-suffix="">0</div><div class="stat-label">año en que el Banco de Inglaterra confirmó que los bancos crean dinero al prestar</div></div>
+          <div class="stat-card"><div class="stat-n c-red" data-target="101" data-suffix=" % PIB">0</div><div class="stat-label">deuda pública española a cierre de 2025: el Estado también vive endeudado</div></div>
+        </div>
+        <div class="quote-box"><p>«Quien pide una hipoteca no solo compra una casa: <strong>subvenciona la creación del dinero que después le empobrece</strong>.»</p></div>
+      `
+    },
+    {
+      label: 'CAPA 03', labelClass: 'lbl-3',
+      title: 'La libertad tasada', titleClass: 'c-red',
+      html: `
+        <svg class="layer-header-img" style="background:#07090d;border:1px solid rgba(255,46,85,0.16);margin-bottom:1.6rem;" viewBox="0 0 1280 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capa 03 — La Libertad Tasada">
+          <defs>
+            <radialGradient id="pc3vig" cx="30%" cy="38%" r="85%"><stop offset="0%" stop-color="#0c131c"/><stop offset="100%" stop-color="#05070a"/></radialGradient>
+            <pattern id="pc3grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#0e3540" stroke-width="1" opacity="0.22"/></pattern>
+            <filter id="pc3soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="pc3thin" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="pc3red" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect width="1280" height="440" fill="url(#pc3vig)"/>
+          <rect width="1280" height="440" fill="url(#pc3grid)"/>
+          <rect x="20" y="20" width="1240" height="400" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.38"/>
+          <g stroke="#00e5ff" stroke-width="2" opacity="0.9" fill="none"><path d="M20 46V20H46"/><path d="M1234 20H1260V46"/><path d="M20 394V420H46"/><path d="M1234 420H1260V394"/></g>
+          <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#00e5ff">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
+          <line x1="64" y1="106" x2="600" y2="106" stroke="#1a4b58" stroke-width="1"/>
+          <text x="64" y="148" font-family="'Space Mono',monospace" font-size="18" letter-spacing="6" fill="#ffd400">[ CAPA 03 ]</text>
+          <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#eafcff" filter="url(#pc3soft)">LA LIBERTAD</text>
+          <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="60" fill="#00e5ff" filter="url(#pc3soft)">TASADA</text>
+          <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">La jaula invisible — usus, fructus y el abusus secuestrado.</text>
+          <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">03 / 03</text>
+          <text x="930" y="104" font-family="'Space Mono',monospace" font-size="12" letter-spacing="3" fill="#6f7d86" text-anchor="middle">¿DÓNDE ESTÁ LA LIBERTAD?</text>
+          <line x1="712" y1="126" x2="1166" y2="126" stroke="#00e5ff" stroke-width="2" opacity="0.5"/>
+          <line x1="712" y1="318" x2="1166" y2="318" stroke="#00e5ff" stroke-width="2" opacity="0.5"/>
+          <g stroke="#00e5ff" stroke-width="2" stroke-dasharray="3 9" opacity="0.5"><line x1="740" y1="126" x2="740" y2="318"/><line x1="840" y1="126" x2="840" y2="318"/><line x1="1040" y1="126" x2="1040" y2="318"/><line x1="1138" y1="126" x2="1138" y2="318"/></g>
+          <g font-family="'Space Mono',monospace" fill="#00e5ff" opacity="0.6" font-size="13" text-anchor="middle"><text x="740" y="168">%</text><text x="740" y="226">€</text><text x="740" y="284">%</text><text x="840" y="150">€</text><text x="840" y="208">%</text><text x="840" y="266">€</text><text x="1040" y="168">%</text><text x="1040" y="226">€</text><text x="1040" y="284">%</text><text x="1138" y="150">€</text><text x="1138" y="208">%</text><text x="1138" y="266">€</text></g>
+          <line x1="940" y1="126" x2="940" y2="318" stroke="#ff2e55" stroke-width="3.5" filter="url(#pc3red)"/>
+          <g filter="url(#pc3red)"><path d="M929 214 a11 11 0 0 1 22 0 v10" fill="none" stroke="#ff2e55" stroke-width="2.6"/><rect x="924" y="224" width="32" height="26" rx="4" fill="none" stroke="#ff2e55" stroke-width="2.6"/><circle cx="940" cy="235" r="3" fill="#ff2e55"/><line x1="940" y1="237" x2="940" y2="244" stroke="#ff2e55" stroke-width="2.6"/></g>
+          <g stroke="#00e5ff" stroke-width="2.5" fill="none" opacity="0.85" filter="url(#pc3thin)"><path d="M862 270 L894 244 L926 270"/><rect x="872" y="270" width="44" height="34"/><rect x="886" y="284" width="14" height="20" stroke-width="2"/></g>
+          <g font-family="'Space Mono',monospace" font-size="12" letter-spacing="2" text-anchor="middle"><text x="790" y="344" fill="#5b8893">USUS</text><text x="940" y="344" fill="#ff2e55">ABUSUS</text><text x="1090" y="344" fill="#5b8893">FRUCTUS</text></g>
+        </svg>
+        <p>Aquí las exenciones, lejos de debilitar la tesis, la afilan. La ley exime tu ganancia si reinviertes el importe total en otra vivienda habitual en dos años; y si tienes 65 o más, la exención es total. <strong>Nadie te prohíbe nada</strong>: puedes montar un negocio, pagar estudios, comprar oro, viajar.</p>
+        <p>Y ahí está la trampa, porque parece libertad. <strong>La neutralidad fiscal está reservada a un único destino: volver a comprar vivienda habitual.</strong> Cualquier otra elección activa el IRPF. El Estado no es neutral entre los usos de tu capital: subvenciona uno y penaliza el resto. No te abolieron la libertad: te la tasaron.</p>
+        <p>La propiedad romana son tres facultades: <em>usus</em> (usar), <em>fructus</em> (disfrutar) y <em>abusus</em> (disponer libremente). Te conceden las dos primeras y condicionan la tercera —el corazón del dominio—. Dominio sin libre disposición no es propiedad: es custodia. Y al premiar un único uso, el planificador presume saber mejor que tú dónde va tu capital. La jaula es invisible porque sus barrotes no son muros: son precios.</p>
+        <div class="stats-row">
+          <div class="stat-card"><div class="stat-n c-red" data-target="3" data-suffix="">0</div><div class="stat-label">facultades del dominio romano: usus, fructus y abusus — la última, condicionada</div></div>
+          <div class="stat-card"><div class="stat-n c-red" data-target="1" data-suffix="">0</div><div class="stat-label">único destino del capital con exención: volver a comprar vivienda habitual</div></div>
+          <div class="stat-card"><div class="stat-n c-yellow" data-target="30" data-suffix=" %">0</div><div class="stat-label">tipo del IRPF del ahorro si eliges cualquier otro destino para tu patrimonio</div></div>
+          <div class="stat-card"><div class="stat-n c-cyan" data-target="2" data-suffix=" años">0</div><div class="stat-label">plazo legal para reinvertir y conservar la exención</div></div>
+        </div>
+        <div class="quote-box"><p>«La propiedad sin libre disposición no es dominio: es <strong>custodia</strong>. Te dejan el título y se reservan el destino.»</p></div>
+        <p class="stat-label" style="margin-top:1.6rem;line-height:1.7;">Fuentes: Ley 35/2006 del IRPF (art. 38 exención por reinversión; art. 33.4.b mayores de 65 años) · AEAT, Manual de Renta 2025 · RDL 26/2021 y STC 182/2021 (plusvalía municipal) · Banco de España (deuda AAPP dic-2025) · Bank of England, «Money creation in the modern economy» (2014) · F. Bastiat, «Lo que se ve y lo que no se ve» · F. A. Hayek · O. Spengler.</p>
+      `
+    }
+  ]
 }
 
 ];
