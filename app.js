@@ -171,17 +171,22 @@ function toggleRefs(id) {
 }
 
 // ── SHARE ─────────────────────────────────────────────
+function getShareUrl() {
+  const inv = investigations[curInv];
+  if (inv && inv.externalUrl) return location.origin + inv.externalUrl;
+  return `${location.origin}/inv-${curInv + 1}`;
+}
 function shareX() {
   const inv = investigations[curInv];
-  const u = encodeURIComponent(location.href);
+  const u = encodeURIComponent(getShareUrl());
   const t = encodeURIComponent(`"${inv.title}" — Lo Que No Ves. Investigación sin filtros.`);
   window.open(`https://twitter.com/intent/tweet?text=${t}&url=${u}`, '_blank');
 }
 function shareTG() {
-  window.open(`https://t.me/share/url?url=${encodeURIComponent(location.href)}`, '_blank');
+  window.open(`https://t.me/share/url?url=${encodeURIComponent(getShareUrl())}`, '_blank');
 }
 function copyLink() {
-  navigator.clipboard.writeText(location.href).then(() => {
+  navigator.clipboard.writeText(getShareUrl()).then(() => {
     const b = document.getElementById('copy-btn');
     const orig = b.textContent;
     b.textContent = '✓ Copiado'; b.classList.add('ok');
