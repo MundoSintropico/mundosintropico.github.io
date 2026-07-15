@@ -369,7 +369,7 @@ body.in-reader{background:#f8f8ff;}
   <div class="home-btns">
     <button class="btn btn-primary" onclick="showList()">VER LO QUE NO VES →</button>
     <div class="inv-dropdown-wrap" id="inv-dd-wrap">
-      <button class="btn btn-secondary" onmouseenter="openDD()" onclick="openDD()">≡ INVESTIGACIONES [8] ▾</button>
+      <button class="btn btn-secondary" onmouseenter="openDD()" onclick="openDD()">≡ INVESTIGACIONES [9] ▾</button>
       <div class="inv-dropdown" id="inv-dropdown">
         <div class="inv-dd-item" onclick="showReader(0)">
           <span class="inv-dd-num c-cyan">#01</span>
@@ -403,6 +403,10 @@ body.in-reader{background:#f8f8ff;}
           <span class="inv-dd-num c-red">#08</span>
           <div><div class="inv-dd-title">El Patrimonio Cautivo</div><div class="inv-dd-badge badge-money">FISCALIDAD Y PATRIMONIO</div></div>
         </div>
+        <div class="inv-dd-item" onclick="showReader(8)">
+          <span class="inv-dd-num c-cyan">#09</span>
+          <div><div class="inv-dd-title">El Dominio Cognitivo</div><div class="inv-dd-badge badge-law">GUERRA COGNITIVA</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -416,7 +420,7 @@ body.in-reader{background:#f8f8ff;}
   </nav>
   <div class="list-header">
     <h2>Investigaciones</h2>
-    <p>8 investigaciones · 3 capas de profundidad · Pensamiento crítico</p>
+    <p>9 investigaciones · 3 capas de profundidad · Pensamiento crítico</p>
   </div>
   <div class="inv-list" id="inv-list"></div>
 </section>
@@ -1525,6 +1529,177 @@ const investigations = [
         <div class="quote-box"><p>«La propiedad sin libre disposición no es dominio: es <strong>custodia</strong>. Te dejan el título y se reservan el destino.»</p></div>
         <p class="stat-label" style="margin-top:1.6rem;line-height:1.7;">Fuentes: Ley 35/2006 del IRPF (art. 38 exención por reinversión; art. 33.4.b mayores de 65 años) · AEAT, Manual de Renta 2025 · RDL 26/2021 y STC 182/2021 (plusvalía municipal) · Banco de España (deuda AAPP dic-2025) · Bank of England, «Money creation in the modern economy» (2014) · F. Bastiat, «Lo que se ve y lo que no se ve» · F. A. Hayek · O. Spengler.</p>
       `
+    }
+  ]
+},
+/* ── 8: El Dominio Cognitivo ── */
+{
+  title: 'El Dominio Cognitivo',
+  subtitle: 'La guerra por la mente humana: el campo de batalla que nadie ve porque ocurre dentro de la cabeza',
+  date: '15-07-2026',
+  capas: 3,
+  mins: 11,
+  views: 0,
+  badge: 'GUERRA COGNITIVA',
+  badgeClass: 'badge-law',
+  layers: [
+    {
+      label: 'CAPA 01', labelClass: 'lbl-1',
+      title: 'Qué es el Dominio Cognitivo', titleClass: 'c-cyan',
+      html: `
+            <svg class="layer-header-img" style="background:#07090d;border:1px solid rgba(0,229,255,0.16);margin-bottom:1.6rem;" viewBox="0 0 1280 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="El dominio cognitivo como campo de batalla">
+              <defs>
+                <radialGradient id="cog1vig" cx="30%" cy="38%" r="85%">
+                  <stop offset="0%" stop-color="#0d1620" stop-opacity="1"/>
+                  <stop offset="100%" stop-color="#07090d" stop-opacity="1"/>
+                </radialGradient>
+                <pattern id="cog1grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0V40" fill="none" stroke="#0f2530" stroke-width="1"/>
+                </pattern>
+                <filter id="cog1soft" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="0.4"/>
+                </filter>
+              </defs>
+              <rect width="1280" height="440" fill="url(#cog1vig)"/>
+              <rect width="1280" height="440" fill="url(#cog1grid)"/>
+              <rect x="20" y="20" width="1240" height="400" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.38"/>
+              <g stroke="#00e5ff" stroke-width="2" opacity="0.9" fill="none">
+                <path d="M20 46V20H46"/><path d="M1260 46V20H1234"/><path d="M20 394V420H46"/><path d="M1260 394V420H1234"/>
+              </g>
+              <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#00e5ff">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
+              <line x1="64" y1="106" x2="600" y2="106" stroke="#1a4b58" stroke-width="1"/>
+              <text x="64" y="148" font-family="'Space Mono',monospace" font-size="14" letter-spacing="3" fill="#ffd400">[ CAPA 01 ]</text>
+              <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#eafcff" filter="url(#cog1soft)">EL CAMPO DE BATALLA</text>
+              <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#00e5ff" filter="url(#cog1soft)">QUE NADIE VE</text>
+              <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">Qué es el Dominio Cognitivo</text>
+              <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">01 / 03</text>
+              <g transform="translate(1080,100)" stroke="#00e5ff" fill="none" opacity="0.85">
+                <circle r="14" stroke-width="1.4"/>
+                <circle r="28" stroke-width="1.2" opacity="0.75"/>
+                <circle r="42" stroke-width="1" opacity="0.55"/>
+                <circle r="4" fill="#00e5ff" stroke="none"/>
+                <path d="M0 -50V-58M0 50V58M-50 0H-58M50 0H58" stroke-width="1.2"/>
+              </g>
+              <text x="1080" y="178" font-family="'Space Mono',monospace" font-size="11" letter-spacing="2" fill="#5e6c75" text-anchor="middle">PERCEPCIÓN → DECISIÓN</text>
+            </svg>
+            <p>En 2020, la OTAN abrió en Norfolk (Virginia) su Innovation Hub con un encargo poco habitual: estudiar la mente humana como territorio militar. El informe resultante, firmado por François du Cluzel, bautizó formalmente el <strong>Dominio Cognitivo</strong> como un nuevo escenario de confrontación, distinto de tierra, mar, aire, espacio y ciberespacio: el lugar donde se libra la batalla no son las fronteras, sino la forma en que millones de personas perciben, interpretan, sienten y deciden.</p>
+            <p>En diciembre de 2025, el científico jefe de la OTAN confirmó que ese dominio ya opera de facto, aunque no exista todavía un tratado que lo reconozca como tal. La doctrina distingue cuatro engranajes sobre los que actúa cualquier operación de influencia: la <em>percepción</em> (qué información llega), la <em>interpretación</em> (qué significado se le da), la <em>emoción</em> (qué respuesta afectiva provoca) y la <em>decisión</em> (qué acción se toma después). Controlar los tres primeros es, cada vez con más frecuencia, la forma más barata de determinar el cuarto.</p>
+            <div class="stats-row">
+              <div class="stat-card"><div class="stat-n c-cyan" data-target="65" data-suffix=" %">0</div><div class="stat-label">de la población mundial teme el uso de la desinformación como arma — Edelman Trust Barometer 2026</div></div>
+              <div class="stat-card"><div class="stat-n c-yellow" data-target="70" data-suffix=" %">0</div><div class="stat-label">se muestra reacia a confiar en fuentes de información distintas a las propias</div></div>
+              <div class="stat-card"><div class="stat-n c-red" data-target="39" data-suffix=" %">0</div><div class="stat-label">consulta de forma habitual fuentes ideológicamente opuestas a la suya</div></div>
+            </div>
+            <div class="quote-box"><p>«El cerebro humano es, a la vez, el objetivo y el arma en la disputa por la superioridad cognitiva» — NATO Allied Command Transformation</p></div>
+          `
+    },
+    {
+      label: 'CAPA 02', labelClass: 'lbl-2',
+      title: 'El arsenal: tres doctrinas, un mismo objetivo', titleClass: 'c-yellow',
+      html: `
+            <svg class="layer-header-img" style="background:#07090d;border:1px solid rgba(0,229,255,0.16);margin-bottom:1.6rem;" viewBox="0 0 1280 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tres doctrinas de guerra cognitiva convergiendo">
+              <defs>
+                <radialGradient id="cog2vig" cx="30%" cy="38%" r="85%">
+                  <stop offset="0%" stop-color="#1a1608" stop-opacity="1"/>
+                  <stop offset="100%" stop-color="#07090d" stop-opacity="1"/>
+                </radialGradient>
+                <pattern id="cog2grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0V40" fill="none" stroke="#2a2410" stroke-width="1"/>
+                </pattern>
+                <filter id="cog2soft" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="0.4"/>
+                </filter>
+              </defs>
+              <rect width="1280" height="440" fill="url(#cog2vig)"/>
+              <rect width="1280" height="440" fill="url(#cog2grid)"/>
+              <rect x="20" y="20" width="1240" height="400" fill="none" stroke="#ffd400" stroke-width="1" opacity="0.38"/>
+              <g stroke="#ffd400" stroke-width="2" opacity="0.9" fill="none">
+                <path d="M20 46V20H46"/><path d="M1260 46V20H1234"/><path d="M20 394V420H46"/><path d="M1260 394V420H1234"/>
+              </g>
+              <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#ffd400">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
+              <line x1="64" y1="106" x2="600" y2="106" stroke="#5a4b1a" stroke-width="1"/>
+              <text x="64" y="148" font-family="'Space Mono',monospace" font-size="14" letter-spacing="3" fill="#ffd400">[ CAPA 02 ]</text>
+              <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#eafcff" filter="url(#cog2soft)">TRES DOCTRINAS,</text>
+              <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#ffd400" filter="url(#cog2soft)">UN MISMO OBJETIVO</text>
+              <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">El arsenal cognitivo</text>
+              <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">02 / 03</text>
+              <g transform="translate(1080,95)" font-family="'Space Mono',monospace" font-size="11" letter-spacing="1">
+                <circle cx="-46" cy="-22" r="7" fill="#ff3060"/>
+                <text x="-46" y="-34" fill="#ff3060" text-anchor="middle">RUSIA</text>
+                <circle cx="46" cy="-22" r="7" fill="#00e5ff"/>
+                <text x="46" y="-34" fill="#00e5ff" text-anchor="middle">CHINA</text>
+                <circle cx="0" cy="30" r="7" fill="#9fb0ba"/>
+                <text x="0" y="52" fill="#9fb0ba" text-anchor="middle">OTAN</text>
+                <circle cx="0" cy="4" r="5" fill="#ffd400"/>
+                <path d="M-46 -18L-6 0M46 -18L6 0M0 22L0 10" stroke="#5e6c75" stroke-width="1"/>
+              </g>
+              <text x="1080" y="178" font-family="'Space Mono',monospace" font-size="11" letter-spacing="2" fill="#5e6c75" text-anchor="middle">CONVERGENCIA DOCTRINAL</text>
+            </svg>
+            <p>Tres potencias han convertido la disputa por la mente en doctrina oficial, cada una con su propio vocabulario y su propia tradición estratégica, pero con un mismo fin: que el adversario actúe en contra de sus propios intereses creyendo que decide con libertad.</p>
+            <h3 class="c-red">Rusia — Control Reflexivo</h3>
+            <p>Heredera de la escuela soviética de los años sesenta, la doctrina de <em>Control Reflexivo</em> busca transmitir al adversario información cuidadosamente seleccionada para inducirle a tomar, por decisión propia, la opción que más conviene a quien la diseñó. No se trata de mentir sin más, sino de construir el marco entero desde el que la otra parte cree razonar con independencia.</p>
+            <h3 class="c-cyan">China — Las Tres Guerras</h3>
+            <p>La doctrina china de <em>San Zhong Zhanfa</em> (Tres Guerras) articula la disputa mediante guerra psicológica, guerra mediática y guerra jurídica de forma simultánea y coordinada, integrada en la planificación militar ordinaria en lugar de reservarse para tiempos de crisis abierta.</p>
+            <h3 style="color:#9fb0ba;">OTAN — Concepto exploratorio</h3>
+            <p>El bloque atlántico, más tardío en la carrera, define el dominio cognitivo todavía como concepto exploratorio: no dispone de una doctrina ofensiva unificada, sino de un esfuerzo defensivo centrado en lo que denomina <em>resiliencia cognitiva</em> de sus poblaciones y sus fuerzas.</p>
+            <div class="stats-row">
+              <div class="stat-card"><div class="stat-n c-magenta" data-target="2137" data-suffix=" %">0</div><div class="stat-label">de crecimiento del fraude con deepfakes en tres años — Signicat / SQ Magazine 2026</div></div>
+              <div class="stat-card"><div class="stat-n c-yellow" data-target="62" data-suffix=" %">0</div><div class="stat-label">de las organizaciones sufrió al menos un incidente de deepfake en 12 meses — Gartner AI Risk Survey 2025</div></div>
+              <div class="stat-card"><div class="stat-n c-cyan" data-target="16" data-suffix="x">0</div><div class="stat-label">crecimiento de deepfakes en circulación, de ~500.000 a ~8 millones — Europol IOCTA 2025</div></div>
+            </div>
+            <div class="quote-box"><p>«No se busca vencer al adversario. Se busca que el adversario elija perder, creyendo que gana» — síntesis editorial</p></div>
+          `
+    },
+    {
+      label: 'CAPA 03', labelClass: 'lbl-3',
+      title: 'Implicaciones geoestratégicas y el horizonte', titleClass: 'c-red',
+      html: `
+            <svg class="layer-header-img" style="background:#07090d;border:1px solid rgba(0,229,255,0.16);margin-bottom:1.6rem;" viewBox="0 0 1280 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bifurcación de realidades y el horizonte geoestratégico">
+              <defs>
+                <radialGradient id="cog3vig" cx="30%" cy="38%" r="85%">
+                  <stop offset="0%" stop-color="#1a0810" stop-opacity="1"/>
+                  <stop offset="100%" stop-color="#07090d" stop-opacity="1"/>
+                </radialGradient>
+                <pattern id="cog3grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0V40" fill="none" stroke="#2a1018" stroke-width="1"/>
+                </pattern>
+                <filter id="cog3soft" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="0.4"/>
+                </filter>
+              </defs>
+              <rect width="1280" height="440" fill="url(#cog3vig)"/>
+              <rect width="1280" height="440" fill="url(#cog3grid)"/>
+              <rect x="20" y="20" width="1240" height="400" fill="none" stroke="#ff3060" stroke-width="1" opacity="0.38"/>
+              <g stroke="#ff3060" stroke-width="2" opacity="0.9" fill="none">
+                <path d="M20 46V20H46"/><path d="M1260 46V20H1234"/><path d="M20 394V420H46"/><path d="M1260 394V420H1234"/>
+              </g>
+              <text x="64" y="92" font-family="'Space Mono',monospace" font-size="15" letter-spacing="4" fill="#ff3060">MUNDO SINTRÓPICO · INVESTIGACIÓN</text>
+              <line x1="64" y1="106" x2="600" y2="106" stroke="#5a1a28" stroke-width="1"/>
+              <text x="64" y="148" font-family="'Space Mono',monospace" font-size="14" letter-spacing="3" fill="#ffd400">[ CAPA 03 ]</text>
+              <text x="62" y="224" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#eafcff" filter="url(#cog3soft)">LA GUERRA SIN</text>
+              <text x="62" y="290" font-family="'Syne',sans-serif" font-weight="800" font-size="50" fill="#ff3060" filter="url(#cog3soft)">FECHA DE FIN</text>
+              <text x="64" y="340" font-family="'Lora',serif" font-style="italic" font-size="20" fill="#9fb0ba">Implicaciones geoestratégicas y el horizonte</text>
+              <text x="64" y="402" font-family="'Space Mono',monospace" font-size="13" letter-spacing="3" fill="#5e6c75">03 / 03</text>
+              <g transform="translate(1080,90)" stroke="#ff3060" fill="none" opacity="0.9">
+                <circle cx="-40" cy="-6" r="5" fill="#ff3060" stroke="none"/>
+                <path d="M-40 -6L10 -30M-40 -6L10 0M-40 -6L10 30"/>
+                <circle cx="14" cy="-30" r="5" fill="#00e5ff" stroke="none"/>
+                <circle cx="14" cy="0" r="5" fill="#ffd400" stroke="none"/>
+                <circle cx="14" cy="30" r="5" fill="#9fb0ba" stroke="none"/>
+              </g>
+              <text x="1080" y="150" font-family="'Space Mono',monospace" font-size="11" letter-spacing="2" fill="#5e6c75" text-anchor="middle">BIFURCACIÓN DE REALIDADES</text>
+              <text x="1080" y="168" font-family="'Space Mono',monospace" font-size="10" letter-spacing="2" fill="#3e4a52" text-anchor="middle">2026 — ?</text>
+            </svg>
+            <p>La guerra clásica tenía fecha de inicio y fecha de fin, un frente identificable y un vencedor reconocible. La guerra cognitiva no tiene ninguna de las tres cosas: se libra en tiempos formalmente de paz, no distingue frente de retaguardia y no termina con una rendición, porque su objetivo no es ocupar territorio sino ocupar interpretaciones. La línea entre guerra y política, ya de por sí borrosa desde Clausewitz, se disuelve casi por completo.</p>
+            <p>Esto obliga a redefinir qué es el poder en el siglo XXI. Ya no basta con controlar recursos, fronteras o infraestructuras. Pasa a ser decisivo quién controla la narrativa, no quién controla el territorio: la capacidad de moldear qué versión de los hechos se acepta como verdadera en la mente de millones de personas, sin que perciban que esa versión fue diseñada para ellas.</p>
+            <p>La OTAN ha empezado a hablar de <em>resiliencia cognitiva</em> como el equivalente, en este dominio, a lo que la resiliencia energética o alimentaria representa en otros: la capacidad de una sociedad de seguir funcionando y decidiendo con criterio propio bajo un bombardeo continuo de influencia externa. El horizonte más cercano apunta a operaciones de influencia autónomas, generadas y ajustadas en tiempo real por sistemas de inteligencia artificial, sin intervención humana directa en cada mensaje individual.</p>
+            <div class="stats-row">
+              <div class="stat-card"><div class="stat-n c-green" data-target="32" data-suffix=" %">0</div><div class="stat-label">cree que la próxima generación vivirá mejor que la actual — Edelman Trust Barometer 2026</div></div>
+              <div class="stat-card"><div class="stat-n c-red" data-target="80" data-suffix=" %">0</div><div class="stat-label">de las organizaciones no tiene un plan formal de respuesta ante manipulación sintética — Keepnet Labs 2026</div></div>
+              <div class="stat-card"><div class="stat-n c-yellow" data-target="13" data-suffix=" %">0</div><div class="stat-label">cuenta con protocolos activos de detección anti-deepfake — Keepnet Labs 2026</div></div>
+            </div>
+            <div class="quote-box"><p>«La próxima frontera no se defiende con ejércitos, sino con criterio propio» — síntesis editorial</p></div>
+            <p class="stat-label" style="margin-top:1.6rem;line-height:1.7;">Fuentes: F. du Cluzel, "Cognitive Warfare" (NATO ACT, 2020) · NATO Allied Command Transformation · Declaraciones del Científico Jefe de la OTAN (dic. 2025) · The Wavell Room (2021) · Edelman Trust Barometer 2026 · Gartner AI Risk Management Survey 2025 · Europol IOCTA 2025 · Keepnet Labs Deepfake Statistics 2026 · Signicat / SQ Magazine 2026.</p>
+          `
     }
   ]
 }
