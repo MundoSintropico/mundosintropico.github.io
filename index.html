@@ -1806,7 +1806,7 @@ function showReader(i) {
   if (inv.externalUrl) { window.location.href = inv.externalUrl; return; }
   curInv = i; curLayer = 0;
   document.title = inv.title + ' — Mundo Sintrópico';
-  try { history.pushState({}, '', '#inv-' + i); } catch(e) {}
+  try { history.pushState({}, '', '/inv-' + (i + 1)); } catch(e) {}
   document.querySelector('meta[name="description"]').setAttribute('content', (inv.subtitle || inv.title).replace(/<[^>]*>/g, ''));
   document.body.classList.add('in-reader');
   ['screen-home','screen-list'].forEach(hide);
