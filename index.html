@@ -2281,7 +2281,10 @@ function openInvFromHash() {
   const m = (location.hash || '').match(/^#inv-(\d+)$/);
   if (!m) return;
   const i = parseInt(m[1], 10);
-  if (investigations[i]) showReader(i);
+  if (investigations[i]) {
+    showReader(i, true);
+    if (!investigations[i].externalUrl) { try { history.replaceState({}, '', '/inv-' + (i + 1)); } catch(e) {} }
+  }
 }
 if (document.readyState !== 'loading') openInvFromHash();
 else window.addEventListener('DOMContentLoaded', openInvFromHash);
