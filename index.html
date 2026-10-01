@@ -1826,7 +1826,7 @@ function renderList() {
         <div class="inv-title">${inv.title}</div>
         <div class="inv-subtitle">${inv.subtitle}</div>
         <div class="inv-meta">
-          <span>${inv.date}</span><span>${inv.capas} capas</span>
+          <span>${inv.date}</span><span>${inv.capas} ${inv.capas === 1 ? 'capa' : 'capas'}</span>
           <span>${inv.mins} min</span>
         </div>
       </div>
@@ -1843,7 +1843,7 @@ function renderReader() {
   document.getElementById('reader-h1').textContent = inv.title.replace(/"/g,'');
   document.getElementById('reader-subtitle').innerHTML = inv.subtitle;
   document.getElementById('reader-meta').innerHTML =
-    `<span>${inv.date}</span><span>${inv.capas} capas</span><span>${inv.mins} min lectura</span>`;
+    `<span>${inv.date}</span><span>${inv.capas} ${inv.capas === 1 ? 'capa' : 'capas'}</span><span>${inv.mins} min lectura</span>`;
 
   // Layer nav
   document.getElementById('layers-nav').innerHTML = inv.layers.map((l,i) => `
