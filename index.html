@@ -1711,7 +1711,7 @@ const investigations = [
 /* ── 9: Somos Simios con Móvil ── */
 {
   title: 'Somos Simios con Móvil',
-  subtitle: 'La otra mitad del Dominio Cognitivo: el blanco que hace posible el arma',
+  subtitle: 'La otra mitad de <a href="https://mundosintropico.github.io/inv-9" style="color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(0,229,255,.4);" target="_blank" rel="noopener">El Dominio Cognitivo</a>: el blanco que hace posible el arma',
   date: '09-08-2026',
   capas: 3,
   mins: 9,
@@ -1807,7 +1807,7 @@ function showReader(i) {
   curInv = i; curLayer = 0;
   document.title = inv.title + ' — Mundo Sintrópico';
   try { history.pushState({}, '', '#inv-' + i); } catch(e) {}
-  document.querySelector('meta[name="description"]').setAttribute('content', inv.subtitle || inv.title);
+  document.querySelector('meta[name="description"]').setAttribute('content', (inv.subtitle || inv.title).replace(/<[^>]*>/g, ''));
   document.body.classList.add('in-reader');
   ['screen-home','screen-list'].forEach(hide);
   show('screen-reader');
@@ -1842,7 +1842,7 @@ function renderReader() {
   b.className = `reader-badge ${inv.badgeClass}`;
   b.textContent = inv.badge;
   document.getElementById('reader-h1').textContent = inv.title.replace(/"/g,'');
-  document.getElementById('reader-subtitle').textContent = inv.subtitle;
+  document.getElementById('reader-subtitle').innerHTML = inv.subtitle;
   document.getElementById('reader-meta').innerHTML =
     `<span>${inv.date}</span><span>${inv.capas} capas</span><span>${inv.mins} min lectura</span>`;
 
