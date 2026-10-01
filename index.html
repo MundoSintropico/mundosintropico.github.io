@@ -1785,9 +1785,9 @@ let curInv = 0, curLayer = 0;
 let countersObs = null;
 
 // ── NAVIGATION ───────────────────────────────────────
-function showHome() {
+function showHome(skipPush) {
   document.title = 'Mundo Sintrópico — Lo Que No Ves';
-  try { history.pushState({}, '', '/'); } catch(e) {}
+  if (!skipPush) { try { history.pushState({}, '', '/'); } catch(e) {} }
   document.querySelector('meta[name="description"]').setAttribute('content', 'Investigaciones sin filtros sobre privacidad, dinero y poder. Lo que el sistema no quiere que veas.');
   document.body.classList.remove('in-reader');
   ['screen-list','screen-reader'].forEach(hide);
@@ -1801,12 +1801,12 @@ function showList() {
   renderList();
   scrollTo(0,0);
 }
-function showReader(i) {
+function showReader(i, skipPush) {
   const inv = investigations[i];
   if (inv.externalUrl) { window.location.href = inv.externalUrl; return; }
   curInv = i; curLayer = 0;
   document.title = inv.title + ' — Mundo Sintrópico';
-  try { history.pushState({}, '', '/inv-' + (i + 1)); } catch(e) {}
+  if (!skipPush) { try { history.pushState({}, '', '/inv-' + (i + 1)); } catch(e) {} }
   document.querySelector('meta[name="description"]').setAttribute('content', (inv.subtitle || inv.title).replace(/<[^>]*>/g, ''));
   document.body.classList.add('in-reader');
   ['screen-home','screen-list'].forEach(hide);
@@ -2286,6 +2286,18 @@ function openInvFromHash() {
 if (document.readyState !== 'loading') openInvFromHash();
 else window.addEventListener('DOMContentLoaded', openInvFromHash);
 window.addEventListener('hashchange', openInvFromHash);
+window.addEventListener('popstate', function() {
+  const path = location.pathname.replace(/\/$/, '');
+  const mPath = path.match(/^\/inv-(\d+)$/);
+  const mHash = (location.hash || '').match(/^#inv-(\d+)$/);
+  if (mPath) {
+    showReader(parseInt(mPath[1], 10) - 1, true);
+  } else if (mHash) {
+    showReader(parseInt(mHash[1], 10), true);
+  } else {
+    showHome(true);
+  }
+});
 
 </script>
 </body>
