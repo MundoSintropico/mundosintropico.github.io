@@ -369,7 +369,7 @@ body.in-reader{background:#f8f8ff;}
   <div class="home-btns">
     <button class="btn btn-primary" onclick="showList()">VER LO QUE NO VES →</button>
     <div class="inv-dropdown-wrap" id="inv-dd-wrap">
-      <button class="btn btn-secondary" onmouseenter="openDD()" onclick="openDD()">≡ INVESTIGACIONES [10] ▾</button>
+      <button class="btn btn-secondary" onmouseenter="openDD()" onclick="openDD()">≡ INVESTIGACIONES [11] ▾</button>
       <div class="inv-dropdown" id="inv-dropdown">
         <div class="inv-dd-item" onclick="showReader(0)">
           <span class="inv-dd-num c-cyan">#01</span>
@@ -411,6 +411,10 @@ body.in-reader{background:#f8f8ff;}
           <span class="inv-dd-num c-yellow">#10</span>
           <div><div class="inv-dd-title">Somos Simios con Móvil</div><div class="inv-dd-badge badge-privacy">PSICOLOGÍA DE MASAS</div></div>
         </div>
+        <div class="inv-dd-item" onclick="showReader(10)">
+          <span class="inv-dd-num c-green">#11</span>
+          <div><div class="inv-dd-title">No es una conspiración. Es un calendario.</div><div class="inv-dd-badge badge-money">DINERO E IDENTIDAD DIGITAL</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -424,7 +428,7 @@ body.in-reader{background:#f8f8ff;}
   </nav>
   <div class="list-header">
     <h2>Investigaciones</h2>
-    <p>10 investigaciones · 3 capas de profundidad · Pensamiento crítico</p>
+    <p>11 investigaciones · 3 capas de profundidad · Pensamiento crítico</p>
   </div>
   <div class="inv-list" id="inv-list"></div>
 </section>
@@ -1775,6 +1779,90 @@ const investigations = [
           `
     }
   ]
+},
+
+/* ── 10: No es una conspiración. Es un calendario. ── */
+{
+  title: 'No es una conspiración. Es un calendario.',
+  subtitle: 'Identidad digital, euro digital, tokenización y precio del carbono: cuatro piezas con fechas publicadas, y lo que permite su suma',
+  date: '04-10-2026',
+  capas: 3,
+  mins: 9,
+  views: 0,
+  badge: 'DINERO E IDENTIDAD DIGITAL',
+  badgeClass: 'badge-money',
+  layers: [
+    {
+      label: 'CAPA 01', labelClass: 'lbl-1',
+      title: 'Dos mensajes, una intuición', titleClass: 'c-cyan',
+      html: `
+            <img class="layer-header-img" src="inv11-capa1.jpg" alt="Dos mensajes, una intuición" style="margin-bottom:1.6rem;">
+            <p>Esta semana contesté a dos compañeros por WhatsApp. Uno había compartido un artículo de opinión. Una compañera me contaba, con un orgullo más que justificado, que sus hijos trabajan, investigan, forman a otros y, además, acampan para reclamar justicia.</p>
+            <p>A los dos les dije lo mismo, y con admiración: <strong>nada funciona como creemos que funciona</strong>. Yo estuve en el 15M, comprometido como el que más, y desde entonces veo que en casi todo hemos ido hacia atrás. Cuando hablo de euro digital, de tokenización o de identidad digital, la respuesta suele ser un encogimiento de hombros. No es falta de inteligencia: es que nadie nos ha enseñado a mirar el calendario.</p>
+            <p>Esta investigación no pide que creas nada. Pide que mires cuatro piezas con sus fechas, tal como las han publicado las propias instituciones, y que luego decidas qué dice su suma.</p>
+            <div class="stats-row">
+              <div class="stat-card"><div class="stat-n c-cyan" data-target="2" data-suffix="">0</div><div class="stat-label">respuestas de WhatsApp de dos compañeros distintos, con la misma intuición de fondo</div></div>
+              <div class="stat-card"><div class="stat-n c-yellow" data-target="15" data-suffix=" años">0</div><div class="stat-label">desde el 15M de 2011, el movimiento que movilizó a una generación contra la desigualdad</div></div>
+              <div class="stat-card"><div class="stat-n c-red" data-target="4" data-suffix="">0</div><div class="stat-label">piezas con fecha publicada: identidad, dinero, mercados y carbono</div></div>
+            </div>
+            <div class="quote-box"><p>«No hace falta una conspiración cuando hay un calendario publicado.»</p></div>
+          `
+    },
+    {
+      label: 'CAPA 02', labelClass: 'lbl-2',
+      title: 'Cuatro piezas, un calendario', titleClass: 'c-yellow',
+      html: `
+            <img class="layer-header-img" src="inv11-capa2.jpg" alt="Cuatro piezas con fecha publicada" style="margin-bottom:1.6rem;">
+            <p>Esto es lo que dicen los documentos oficiales y la prensa que los recoge, pieza por pieza. Aquí no hay interpretación: solo fechas y decisiones ya adoptadas o en negociación.</p>
+            <h3 class="c-cyan">Identidad — la cartera europea (eIDAS 2.0)</h3>
+            <p>El Reglamento (UE) 2024/1183 obliga a cada Estado miembro a ofrecer al menos una cartera de identidad digital europea antes del <strong>24 de diciembre de 2026</strong>. España presentó la suya, la Cartera IDUE, en Bruselas en diciembre de 2025. Un año después, desde diciembre de 2027, sectores regulados como la banca, las telecomunicaciones o el transporte tendrán que aceptarla. La cartera se ofrece a quien la solicite, y los métodos de identificación tradicionales siguen siendo válidos.</p>
+            <h3 class="c-yellow">Dinero — el euro digital</h3>
+            <p>El Parlamento Europeo aprobó el 9 de julio de 2026 abrir las negociaciones con el Consejo sobre el reglamento del euro digital. El BCE se prepara para una posible primera emisión en <strong>2029</strong>, con un piloto desde mediados de 2027 en el que participarían 36 proveedores de servicios de pago. La decisión final de emitir sigue en manos del propio BCE y depende de que la ley se adopte. El BCE sostiene que el euro digital se diseña para complementar al efectivo, no para sustituirlo, y apoya reforzar el derecho a pagar en efectivo.</p>
+            <h3 style="color:#ff2df7;">Mercados — Pontes y Appia</h3>
+            <p>Pontes, la solución del Eurosistema para liquidar en dinero de banco central operaciones con activos tokenizados, se lanzó en septiembre de 2026. Appia, el ecosistema integrado de largo plazo que lo sustituirá, apunta a 2028. Es infraestructura mayorista, entre instituciones financieras, y es un proyecto distinto del euro digital.</p>
+            <h3 class="c-red">Carbono — el ETS2</h3>
+            <p>El nuevo mercado de derechos de emisión extiende el precio del CO₂ a los combustibles de edificios y de transporte por carretera. Los colegisladores europeos lo retrasaron un año en noviembre de 2025, de 2027 a 2028. Quienes deben adquirir los derechos son los suministradores de combustible, y el coste acaba repercutiendo en el precio final. No fija cuotas individuales de carbono. Incluye un Fondo Social para el Clima de al menos 86.700 millones de euros entre 2026 y 2032.</p>
+            <div class="stats-row">
+              <div class="stat-card"><div class="stat-n c-cyan" data-target="24" data-suffix=" dic 2026">0</div><div class="stat-label">fecha límite para que cada Estado miembro ofrezca la cartera de identidad digital europea</div></div>
+              <div class="stat-card"><div class="stat-n c-yellow" data-target="2029" data-suffix="">0</div><div class="stat-label">año de la posible primera emisión del euro digital, si la ley se adopta y el BCE decide emitir</div></div>
+              <div class="stat-card"><div class="stat-n c-red" data-target="36" data-suffix="">0</div><div class="stat-label">proveedores de servicios de pago previstos en el piloto del euro digital, según la prensa</div></div>
+            </div>
+            <div class="quote-box"><p>«Cada pieza tiene su fecha, su reglamento y su justificación. Lo que no tiene es a nadie mirando el conjunto.»</p></div>
+          `
+    },
+    {
+      label: 'CAPA 03', labelClass: 'lbl-3',
+      title: 'Las intenciones caducan', titleClass: 'c-red',
+      html: `
+            <img class="layer-header-img" src="inv11-capa3.jpg" alt="Las intenciones caducan, la infraestructura se queda" style="margin-bottom:1.6rem;">
+            <p>Cada pieza tiene su justificación y, por separado, es defendible: seguridad, eficiencia, soberanía, clima. Nadie lo niega. La pregunta es otra: <strong>¿qué permite la suma?</strong></p>
+            <p>Una identidad que abre cuentas. Un dinero que viaja por rieles públicos. Mercados que se liquidan sobre registros distribuidos. Un precio del carbono que llega a la calefacción y al depósito del coche. Y por encima, la inteligencia artificial: la capa capaz de leer, cruzar y decidir sobre todo lo anterior a una escala que ningún funcionario podría igualar.</p>
+            <p>Las intenciones declaradas hoy son una cosa. Las capacidades instaladas son otra, y duran mucho más que cualquier gobierno. Una infraestructura construida con unas garantías puede usarse con otras cuando cambie la ley, la mayoría o el miedo del momento.</p>
+            <p>No hace falta demostrar un plan único para preocuparse. Basta con que la infraestructura exista y con que las salvaguardas no estén escritas en piedra. Tampoco hace falta resignarse: el reglamento del euro digital aún se negocia, y es ahí donde se decide qué garantías quedan por escrito.</p>
+            <h3 class="c-cyan">Qué hacer</h3>
+            <p><strong>Leer la letra pequeña</strong> de cada pieza, no los titulares. <strong>Preguntar quién puede cambiar las reglas</strong> y con qué mayoría. <strong>Exigir por escrito los límites</strong>: privacidad, uso del efectivo, voluntariedad y auditoría de los algoritmos. Y hablar de esto con los demás, jóvenes incluidos, sin darlos por perdidos: el miedo paraliza, la información con fuentes permite actuar.</p>
+            <div class="stats-row">
+              <div class="stat-card"><div class="stat-n c-red" data-target="27" data-suffix="">0</div><div class="stat-label">Estados miembros obligados a ofrecer la cartera de identidad digital europea</div></div>
+              <div class="stat-card"><div class="stat-n c-yellow" data-target="2028" data-suffix="">0</div><div class="stat-label">año en que el ETS2 empieza a aplicarse y en que apunta Appia, el ecosistema tokenizado del Eurosistema</div></div>
+              <div class="stat-card"><div class="stat-n c-cyan" data-target="86700" data-suffix=" M€">0</div><div class="stat-label">como mínimo, Fondo Social para el Clima entre 2026 y 2032 para amortiguar el impacto del ETS2</div></div>
+            </div>
+            <div class="quote-box"><p>«Las intenciones caducan. La infraestructura se queda.»</p></div>
+
+            <div style="margin-top:2.2rem;border:1px solid var(--dgray);padding:1.4rem 1.4rem .6rem;background:rgba(120,120,160,.08);">
+              <div style="font-family:Space Mono,monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.1rem;">&#x203A; Bloque de transparencia</div>
+
+              <div style="font-family:Space Mono,monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem;">Hechos verificados (con fuente)</div>
+              <p style="font-size:.88rem;">La cartera de identidad digital debe estar disponible en cada Estado miembro antes del 24 de diciembre de 2026; la aceptación obligatoria en sectores regulados llega un año después. El Parlamento Europeo aprobó el 9 de julio de 2026 iniciar negociaciones con el Consejo sobre el euro digital; el BCE se prepara para una posible emisión en 2029, con piloto desde mediados de 2027, y se reserva la decisión final. Pontes se lanzó en septiembre de 2026 y Appia apunta a 2028; ambos son mayoristas. El ETS2 se retrasó un año, a 2028, y recae sobre los suministradores de combustible.</p>
+
+              <div style="font-family:Space Mono,monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin:1.2rem 0 .5rem;">Datos que matizan la tesis</div>
+              <p style="font-size:.88rem;">La cartera se ofrece a quien la solicite y los métodos tradicionales siguen siendo válidos. El BCE presenta el euro digital como complemento del efectivo, y la Comisión ha propuesto reforzar el derecho a pagar con él. El ETS2 obliga a los suministradores de combustible, no a los ciudadanos, y no fija cuotas individuales de carbono.</p>
+
+              <div style="font-family:Space Mono,monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:1.2rem 0 .5rem;">Interpretación editorial (no demostrada)</div>
+              <p style="font-size:.88rem;">Que la suma de estas piezas configura una arquitectura susceptible de usarse para el control. Que la inteligencia artificial actuará como capa de integración y decisión sobre todas ellas. No hay prueba pública de un plan único y coordinado: lo que se documenta son decisiones separadas, con calendarios y justificaciones propias.</p>
+            </div>
+          `
+    }
+  ]
 }
 
 ];
@@ -1820,7 +1908,7 @@ function hide(id){document.getElementById(id).classList.add('hidden');}
 function renderList() {
   document.getElementById('inv-list').innerHTML = investigations.map((inv,i) => `
     <div class="inv-card" onclick="showReader(${i})">
-      <div class="inv-num">#0${i+1}</div>
+      <div class="inv-num">#${String(i+1).padStart(2,'0')}</div>
       <div class="inv-content">
         <span class="inv-badge ${inv.badgeClass}">${inv.badge}</span>
         <div class="inv-title">${inv.title}</div>
@@ -1905,7 +1993,7 @@ function showFinal() {
       nextEl.innerHTML = `<div class="next-inv-block">
         <p class="next-inv-label">Siguiente investigación</p>
         <div class="next-inv-card" onclick="showReader(${next})">
-          <div class="inv-num">#0${next+1}</div>
+          <div class="inv-num">#${String(next+1).padStart(2,'0')}</div>
           <div style="flex:1">
             <span class="inv-badge ${inv.badgeClass}">${inv.badge}</span>
             <div class="inv-title" style="margin-top:.4rem">${inv.title}</div>
@@ -2149,10 +2237,34 @@ const REFS_INV9 = `<div id="refs-block-9" class="refs-section">
 </div>
 </div>`;
 
+const REFS_INV10 = `<div id="refs-block-10" class="refs-section">
+<div class="refs-toggle" onclick="toggleRefs(10)" style="cursor:pointer;margin-top:2rem;padding:1rem 0;border-top:1px solid var(--dgray);display:flex;align-items:center;justify-content:space-between;">
+<span style="font-family:Space Mono,monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)">&#x203A; Fuentes y referencias (13)</span>
+<span id="refs-arrow-10" style="font-size:.8rem">&#x25BC;</span>
+</div>
+<div id="refs-content-10" style="display:none">
+<div class="refs-group-label" style="margin-top:1.8rem;font-family:Space Mono,monospace;font-size:.58rem;letter-spacing:.12em;margin-bottom:1rem;text-transform:uppercase;">Fuentes primarias e institucionales</div>
+<div class="ref-row"><span class="ref-num c-red">01</span><div class="ref-body"><div class="ref-src">Banco Central Europeo — Nota de prensa (30/10/2025)</div><div class="ref-quote">El Consejo de Gobierno pasa a la siguiente fase del euro digital: piloto desde mediados de 2027 y preparación para una posible primera emisión en 2029, si la legislación se adopta en 2026.</div><a href="https://ecb.europa.eu/press/pr/date/2025/html/ecb.pr251030~8c5b5beef0.es.html" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://ecb.europa.eu/press/pr/date/2025/html/ecb.pr251030~8c5b5beef0.es.html</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">02</span><div class="ref-body"><div class="ref-src">Banco Central Europeo — Blog: «Un euro digital para la era digital» (9/12/2025)</div><div class="ref-quote">El BCE plantea el euro digital como complemento del efectivo, no como sustituto, y vincula su emisión en 2029 a la adopción de la legislación en 2026.</div><a href="https://www.ecb.europa.eu/press/blog/date/2025/html/ecb.blog20251209~9ba130ff20.es.html" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.ecb.europa.eu/press/blog/date/2025/html/ecb.blog20251209~9ba130ff20.es.html</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">03</span><div class="ref-body"><div class="ref-src">Banco Central Europeo — Nota de prensa (11/3/2026): Pontes y Appia</div><div class="ref-quote">Estrategia del Eurosistema para el dinero de banco central tokenizado: Pontes, para liquidar operaciones basadas en DLT en el tercer trimestre de 2026, y Appia, la hoja de ruta a más largo plazo.</div><a href="https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260311~14ddf51a77.es.html" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260311~14ddf51a77.es.html</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">04</span><div class="ref-body"><div class="ref-src">Piero Cipollone (BCE) — Blog (12/3/2026): vía hacia el futuro de la financiación digital de Europa</div><div class="ref-quote">Explica que Pontes permitirá liquidar en dinero de banco central operaciones mayoristas con DLT y que Appia diseñará la próxima generación de infraestructuras financieras europeas.</div><a href="https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260312~5dfa697fdd.es.html" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260312~5dfa697fdd.es.html</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">05</span><div class="ref-body"><div class="ref-src">Reglamento (UE) 2024/1183 (eIDAS 2.0) — Diario Oficial de la Unión Europea</div><div class="ref-quote">Obliga a los Estados miembros a ofrecer al menos una cartera de identidad digital europea en los 24 meses siguientes a la entrada en vigor de los actos de ejecución.</div><a href="https://eur-lex.europa.eu/eli/reg/2024/1183/oj" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://eur-lex.europa.eu/eli/reg/2024/1183/oj</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">06</span><div class="ref-body"><div class="ref-src">Agencia Europea de Medio Ambiente — Briefing sobre el ETS2 y el Fondo Social para el Clima</div><div class="ref-quote">Recoge el acuerdo de noviembre de 2025 para retrasar un año el ETS2, que pasa a empezar en enero de 2028 en lugar de 2027.</div><a href="https://www.eea.europa.eu/en/analysis/publications/emissions-reduction-from-transport-in-europe-how-the-ets2-will-help-this-sector-meet-its-climate-targets" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.eea.europa.eu/en/analysis/publications/emissions-reduction-from-transport-in-europe-how-the-ets2-will-help-this-sector-meet-its-climate-targets</a></div></div>
+<div class="refs-group-label" style="margin-top:1.8rem;font-family:Space Mono,monospace;font-size:.58rem;letter-spacing:.12em;margin-bottom:1rem;text-transform:uppercase;">Prensa y análisis</div>
+<div class="ref-row"><span class="ref-num c-red">07</span><div class="ref-body"><div class="ref-src">Moncloa — «La Eurocámara aprueba negociar el euro digital» (11/7/2026)</div><div class="ref-quote">Crónica del voto del Parlamento Europeo que abre los trílogos con el Consejo y la Comisión sobre el reglamento del euro digital.</div><a href="https://www.moncloa.com/2026/07/11/parlamento-europeo-aprueba-negociar-euro-digital-3397939" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.moncloa.com/2026/07/11/parlamento-europeo-aprueba-negociar-euro-digital-3397939</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">08</span><div class="ref-body"><div class="ref-src">Moncloa — «El BCE ultima el euro digital y abre el debate sobre privacidad y seguridad en los pagos» (27/9/2026)</div><div class="ref-quote">Calendario del piloto (segundo semestre de 2027, doce meses, 36 proveedores de servicios de pago) y 2029 como horizonte condicionado al marco legislativo.</div><a href="https://www.moncloa.com/2026/09/27/bce-euro-digital-privacidad-pagos-3438413/" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.moncloa.com/2026/09/27/bce-euro-digital-privacidad-pagos-3438413/</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">09</span><div class="ref-body"><div class="ref-src">EADTrust — Plazo de diciembre de 2026 de la cartera europea de identidad digital</div><div class="ref-quote">Resume los plazos de eIDAS 2.0: 24 de diciembre de 2026 para los Estados y diciembre de 2027 para la aceptación en el sector privado regulado.</div><a href="https://www.eadtrust.eu/blog/plazo-diciembre-2026-eudi-wallet/" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.eadtrust.eu/blog/plazo-diciembre-2026-eudi-wallet/</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">10</span><div class="ref-body"><div class="ref-src">DiarioBitcoin — «El BCE lanza Pontes para llevar las finanzas tokenizadas al dinero de banco central» (21/9/2026)</div><div class="ref-quote">Describe Pontes como pieza operativa de corto plazo y Appia como arquitectura tokenizada de largo plazo, con horizonte en 2028.</div><a href="https://www.diariobitcoin.com/blockchain/el-bce-lanza-pontes-para-llevar-las-finanzas-tokenizadas-al-dinero-de-banco-central/" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.diariobitcoin.com/blockchain/el-bce-lanza-pontes-para-llevar-las-finanzas-tokenizadas-al-dinero-de-banco-central/</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">11</span><div class="ref-body"><div class="ref-src">El Boletín — «El BCE estrena Pontes para liquidar activos tokenizados con dinero de banco central»</div><div class="ref-quote">Aclara que Pontes conecta mercados DLT con dinero de banco central y que es un proyecto distinto del euro digital.</div><a href="https://www.elboletin.com/el-bce-estrena-pontes-para-liquidar-activos-tokenizados-con-dinero-de-banco-central/" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.elboletin.com/el-bce-estrena-pontes-para-liquidar-activos-tokenizados-con-dinero-de-banco-central/</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">12</span><div class="ref-body"><div class="ref-src">Ecoembes The Circular Campus — RCDE 2 (ETS2): qué es, a quién afecta y calendario legal</div><div class="ref-quote">Explica que el ETS2 obliga a las entidades reguladas, los suministradores de combustible, a entregar derechos desde 2028, sin asignación gratuita.</div><a href="https://www.ecoembesthecircularcampus.com/blog/rcde-2/" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://www.ecoembesthecircularcampus.com/blog/rcde-2/</a></div></div>
+<div class="ref-row"><span class="ref-num c-red">13</span><div class="ref-body"><div class="ref-src">Global Oil Shock — Impuesto al carbono 2026: ETS2 desde 2028</div><div class="ref-quote">Cifra el Fondo Social para el Clima en unos 86.700 millones de euros para 2026-2032, destinado a mitigar el impacto sobre los hogares vulnerables.</div><a href="https://globaloilshock.com/es/glosario/impuesto-carbono/" target="_blank" rel="noopener" style="font-size:.52rem;color:var(--cyan);text-decoration:none;opacity:.7;display:block;margin-top:.15rem;word-break:break-all;">https://globaloilshock.com/es/glosario/impuesto-carbono/</a></div></div>
+</div>
+</div>`;
+
 
 function renderRefs() {
   const c = document.getElementById('refs-container');
-  const map = [REFS_INV0, REFS_INV1, REFS_INV2, REFS_INV3, REFS_INV4, REFS_INV5, undefined, undefined, REFS_INV8, REFS_INV9];
+  const map = [REFS_INV0, REFS_INV1, REFS_INV2, REFS_INV3, REFS_INV4, REFS_INV5, undefined, undefined, REFS_INV8, REFS_INV9, REFS_INV10];
   c.innerHTML = map[curInv] || '';
   const content = document.getElementById(`refs-content-${curInv}`);
   if (content) content.style.display = 'none';
